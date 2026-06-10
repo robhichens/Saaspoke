@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
+import { useReduceMotion } from "../lib/useReduceMotion";
 import { VERTICALS } from "../lib/verticals";
 
 const C = 320; // center
@@ -51,7 +52,7 @@ export function Wheel({
   onSelect?: (i: number) => void;
   className?: string;
 }) {
-  const reduce = useReducedMotion();
+  const reduce = useReduceMotion();
   const wrapRef = useRef<HTMLDivElement>(null);
 
   // --- interactive rotation: spring the selected spoke to 12 o'clock ---

@@ -1,4 +1,5 @@
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
+import { useReduceMotion } from "../lib/useReduceMotion";
 import type { ReactNode } from "react";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -15,7 +16,7 @@ export function Reveal({
   className?: string;
   as?: "div" | "li" | "section" | "p";
 }) {
-  const reduce = useReducedMotion();
+  const reduce = useReduceMotion();
   const Tag = motion[as];
   return (
     <Tag

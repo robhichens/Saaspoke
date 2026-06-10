@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { useInView, useReducedMotion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useReduceMotion } from "../lib/useReduceMotion";
 
 /** Counts up once on first view. Reduced motion shows the final value immediately. */
 export function CountUp({
@@ -15,7 +16,7 @@ export function CountUp({
 }) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-60px 0px" });
-  const reduce = useReducedMotion();
+  const reduce = useReduceMotion();
   const [value, setValue] = useState(reduce ? to : 0);
 
   useEffect(() => {

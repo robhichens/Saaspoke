@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { useReducedMotion } from "framer-motion";
+import { useReduceMotion } from "../lib/useReduceMotion";
 
 /**
  * Custom cursor: a small crosshair / measurement reticle (drafting motif).
@@ -7,7 +7,7 @@ import { useReducedMotion } from "framer-motion";
  * Grows + shows a label over elements carrying [data-cursor="label"].
  */
 export function Cursor() {
-  const reduce = useReducedMotion();
+  const reduce = useReduceMotion();
   const dotRef = useRef<HTMLDivElement>(null);
   const [enabled, setEnabled] = useState(false);
   const [label, setLabel] = useState<string | null>(null);

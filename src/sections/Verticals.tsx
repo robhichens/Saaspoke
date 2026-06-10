@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { useReduceMotion } from "../lib/useReduceMotion";
 import { ArrowRight } from "lucide-react";
 import { Wheel } from "../components/Wheel";
 import { Reveal, Eyebrow } from "../components/Reveal";
@@ -7,7 +8,7 @@ import { VERTICALS } from "../lib/verticals";
 
 export function Verticals() {
   const [selected, setSelected] = useState(0);
-  const reduce = useReducedMotion();
+  const reduce = useReduceMotion();
   const v = VERTICALS[selected];
 
   return (

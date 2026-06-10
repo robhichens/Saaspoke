@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { useReducedMotion } from "framer-motion";
+import { useReduceMotion } from "../lib/useReduceMotion";
 import type { ReactNode, MouseEvent } from "react";
 
 /**
@@ -9,7 +9,7 @@ import type { ReactNode, MouseEvent } from "react";
  */
 export function Magnetic({ children, strength = 0.25 }: { children: ReactNode; strength?: number }) {
   const ref = useRef<HTMLDivElement>(null);
-  const reduce = useReducedMotion();
+  const reduce = useReduceMotion();
 
   const onMove = (e: MouseEvent) => {
     const el = ref.current;

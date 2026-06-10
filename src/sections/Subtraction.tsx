@@ -1,5 +1,5 @@
 import { useLayoutEffect, useRef, useState } from "react";
-import { useReducedMotion } from "framer-motion";
+import { useReduceMotion } from "../lib/useReduceMotion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Eyebrow } from "../components/Reveal";
@@ -81,7 +81,7 @@ function StaticVersion() {
 }
 
 export function Subtraction() {
-  const reduce = useReducedMotion();
+  const reduce = useReduceMotion();
   const sectionRef = useRef<HTMLElement>(null);
   const fieldRef = useRef<HTMLDivElement>(null);
   const rowRef = useRef<HTMLDivElement>(null);

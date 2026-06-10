@@ -1,5 +1,5 @@
 import { useLayoutEffect, useRef } from "react";
-import { useReducedMotion } from "framer-motion";
+import { useReduceMotion } from "../lib/useReduceMotion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Eyebrow, Reveal } from "../components/Reveal";
@@ -45,7 +45,7 @@ function StaticChart() {
 }
 
 export function Milestones() {
-  const reduce = useReducedMotion();
+  const reduce = useReduceMotion();
   const sectionRef = useRef<HTMLElement>(null);
   const profitRef = useRef<HTMLSpanElement>(null);
   const clientsRef = useRef<HTMLSpanElement>(null);

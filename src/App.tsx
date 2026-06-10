@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect } from "react";
-import { useReducedMotion } from "framer-motion";
+import { useReduceMotion } from "./lib/useReduceMotion";
 
 import { Cursor } from "./components/Cursor";
 import { Nav } from "./sections/Nav";
@@ -21,7 +21,7 @@ const Contact = lazy(() => import("./sections/Contact").then((m) => ({ default: 
 const Footer = lazy(() => import("./sections/Footer").then((m) => ({ default: m.Footer })));
 
 export default function App() {
-  const reduce = useReducedMotion();
+  const reduce = useReduceMotion();
 
   // Smooth scroll (Lenis) wired into GSAP's ticker; loaded after first paint,
   // disabled entirely under reduced motion.

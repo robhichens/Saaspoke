@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useReducedMotion } from "framer-motion";
+import { useReduceMotion } from "../lib/useReduceMotion";
 import { Menu, X } from "lucide-react";
 
 const LINKS = [
@@ -29,7 +29,7 @@ function Wordmark() {
 }
 
 export function Nav() {
-  const reduce = useReducedMotion();
+  const reduce = useReduceMotion();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 

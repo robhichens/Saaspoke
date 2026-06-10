@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && tsx --tsconfig tsconfig.app.json scripts/prerender.tsx",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -22,6 +22,7 @@
     "@types/react-dom": "^19.0.3",
     "@vitejs/plugin-react": "^4.3.4",
     "tailwindcss": "^4.0.6",
+    "tsx": "^4.22.4",
     "typescript": "~5.7.2",
     "vite": "^6.1.0"
   }

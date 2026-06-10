@@ -1,4 +1,5 @@
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
+import { useReduceMotion } from "../lib/useReduceMotion";
 import { ArrowRight } from "lucide-react";
 import { Wheel } from "../components/Wheel";
 import { Magnetic } from "../components/Magnetic";
@@ -8,7 +9,7 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 
 /** Headline lines reveal with a clip mask, staggered. */
 function Line({ children, delay }: { children: React.ReactNode; delay: number }) {
-  const reduce = useReducedMotion();
+  const reduce = useReduceMotion();
   return (
     <span className="block overflow-hidden pb-[0.08em]">
       <motion.span
@@ -24,7 +25,7 @@ function Line({ children, delay }: { children: React.ReactNode; delay: number })
 }
 
 export function Hero() {
-  const reduce = useReducedMotion();
+  const reduce = useReduceMotion();
   const fade = (delay: number) => ({
     initial: reduce ? false : { opacity: 0, y: 12 },
     animate: reduce ? undefined : { opacity: 1, y: 0 },

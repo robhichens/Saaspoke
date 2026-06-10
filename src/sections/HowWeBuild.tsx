@@ -1,4 +1,5 @@
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
+import { useReduceMotion } from "../lib/useReduceMotion";
 import { Reveal, Eyebrow } from "../components/Reveal";
 
 const STEPS = [
@@ -25,7 +26,7 @@ const STEPS = [
 ];
 
 export function HowWeBuild() {
-  const reduce = useReducedMotion();
+  const reduce = useReduceMotion();
 
   return (
     <section id="how" className="mx-auto max-w-6xl px-5 py-28 md:px-8 md:py-36">

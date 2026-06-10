@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { useReducedMotion } from "framer-motion";
+import { useReduceMotion } from "../lib/useReduceMotion";
 import { Reveal, Eyebrow } from "../components/Reveal";
 import { TapeRule } from "../components/TapeRule";
 
 export function Pricing() {
-  const reduce = useReducedMotion();
+  const reduce = useReduceMotion();
   const [scanState, setScanState] = useState<"idle" | "scanning" | "done">("idle");
 
   const scan = () => {
