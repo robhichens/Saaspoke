@@ -1,0 +1,179 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #14110e;
+  --color-chalk: #f2ede3;
+  --color-oat: #e7decb;
+  --color-brass: #c8923d;
+  --color-slate: #486a66;
+  --color-ember: #d9603b;
+  --color-rule: #3a332b;
+
+  --font-display: "Fraunces", "Georgia", serif;
+  --font-body: "General Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "Space Mono", "Consolas", monospace;
+}
+
+html {
+  background-color: var(--color-ink);
+  color: var(--color-chalk);
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-brass);
+  color: var(--color-ink);
+}
+
+/* Visible keyboard focus everywhere; brand-colored */
+:focus-visible {
+  outline: 2px solid var(--color-brass);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.on-paper :focus-visible {
+  outline-color: var(--color-slate);
+}
+
+/* Fraunces display setting: a touch of soft + wonk for the atelier voice */
+.font-display {
+  font-variation-settings:
+    "SOFT" 40,
+    "WONK" 1;
+  font-optical-sizing: auto;
+}
+
+/* Custom cursor: hide the native one only when the reticle is active */
+html.has-reticle,
+html.has-reticle * {
+  cursor: none !important;
+}
+
+/* Animated link underline: wipes in from the left */
+.link-wipe {
+  position: relative;
+}
+.link-wipe::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 1px;
+  width: 100%;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 180ms ease-out;
+}
+.link-wipe:hover::after,
+.link-wipe:focus-visible::after {
+  transform: scaleX(1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .link-wipe::after {
+    transition: none;
+  }
+}
+
+/* Card hover: lift + brass hairline draws along the top edge */
+.card-lift {
+  position: relative;
+  transition:
+    transform 180ms ease-out,
+    border-color 180ms ease-out;
+}
+.card-lift::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  background: var(--color-brass);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 200ms ease-out;
+}
+.card-lift:hover {
+  transform: translateY(-3px);
+}
+.card-lift:hover::before {
+  transform: scaleX(1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .card-lift,
+  .card-lift::before {
+    transition: none;
+  }
+  .card-lift:hover {
+    transform: none;
+  }
+}
+
+/* Pricing card scan beam */
+@keyframes scan-sweep {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(calc(100% + 18rem));
+  }
+}
+.scan-beam {
+  animation: scan-sweep 900ms ease-in-out forwards;
+}
+@media (prefers-reduced-motion: reduce) {
+  .scan-beam {
+    animation: none;
+    opacity: 0;
+  }
+}
+
+/* Slow idle rotation for the hero wheel's outer dashed ring */
+@keyframes ring-idle {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.ring-idle {
+  animation: ring-idle 180s linear infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ring-idle {
+    animation: none;
+  }
+}
+
+/* Live indicator pulse (ember) */
+@keyframes live-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+.live-pulse {
+  animation: live-pulse 2.4s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .live-pulse {
+    animation: none;
+  }
+}
