@@ -135,8 +135,8 @@ export function Contact() {
                   {status === "error" && (
                     <p role="status" className="font-mono text-xs text-ember">
                       That didn't go through. Email me directly instead:{" "}
-                      <a href="mailto:rob@saaspoke.com" className="underline">
-                        rob@saaspoke.com
+                      <a href="mailto:robertmhichens@gmail.com" className="underline">
+                        robertmhichens@gmail.com
                       </a>
                     </p>
                   )}
