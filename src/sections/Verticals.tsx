@@ -75,7 +75,8 @@ export function Verticals() {
               </div>
               <h3 className="font-display mt-5 text-3xl font-medium text-chalk">{v.name}</h3>
               <p className="mt-4 text-base leading-relaxed text-chalk/60">
-                <span className="font-mono text-xs tracking-[0.2em] uppercase text-slate">The friction — </span>
+                {/* lighter slate tint — --slate itself fails AA on ink at this size */}
+                <span className="font-mono text-xs tracking-[0.2em] uppercase text-[#84aba4]">The friction — </span>
                 {v.friction}
               </p>
               {v.status === "live" ? (
