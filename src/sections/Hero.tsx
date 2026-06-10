@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useReduceMotion } from "../lib/useReduceMotion";
+import { playIntro } from "../lib/intro";
 import { ArrowRight } from "lucide-react";
 import { Wheel } from "../components/Wheel";
 import { Magnetic } from "../components/Magnetic";
@@ -9,13 +10,13 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 
 /** Headline lines reveal with a clip mask, staggered. */
 function Line({ children, delay }: { children: React.ReactNode; delay: number }) {
-  const reduce = useReduceMotion();
+  const still = useReduceMotion() || !playIntro;
   return (
     <span className="block overflow-hidden pb-[0.08em]">
       <motion.span
         className="block"
-        initial={reduce ? false : { y: "108%" }}
-        animate={reduce ? undefined : { y: 0 }}
+        initial={still ? false : { y: "108%" }}
+        animate={still ? undefined : { y: 0 }}
         transition={{ duration: 0.8, delay, ease: EASE }}
       >
         {children}
@@ -25,10 +26,10 @@ function Line({ children, delay }: { children: React.ReactNode; delay: number })
 }
 
 export function Hero() {
-  const reduce = useReduceMotion();
+  const still = useReduceMotion() || !playIntro;
   const fade = (delay: number) => ({
-    initial: reduce ? false : { opacity: 0, y: 12 },
-    animate: reduce ? undefined : { opacity: 1, y: 0 },
+    initial: still ? false : { opacity: 0, y: 12 },
+    animate: still ? undefined : { opacity: 1, y: 0 },
     transition: { duration: 0.6, delay, ease: EASE },
   });
 

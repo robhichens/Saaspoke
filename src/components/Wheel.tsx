@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { useReduceMotion } from "../lib/useReduceMotion";
+import { playIntro } from "../lib/intro";
 import { VERTICALS } from "../lib/verticals";
 
 const C = 320; // center
@@ -118,7 +119,7 @@ export function Wheel({
 
   const interactive = mode === "interactive";
   const hero = mode === "hero";
-  const drawIn = hero && !reduce;
+  const drawIn = hero && !reduce && playIntro;
 
   const handleKey = (e: React.KeyboardEvent) => {
     if (!interactive || !onSelect) return;
