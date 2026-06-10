@@ -1,10 +1,13 @@
 @import "tailwindcss";
 
-/* Self-hosted fonts — no third-party CSS chain in the critical path */
+/* Self-hosted fonts — no third-party CSS chain in the critical path.
+   Fraunces is subsetted: wght pinned at 500, SOFT 40 / WONK 1 baked in,
+   opsz axis kept (optical sizing matters more than the 500/600 gap).
+   The wide font-weight range stops the browser faux-bolding 600 requests. */
 @font-face {
   font-family: "Fraunces";
   src: url("/fonts/fraunces-latin.woff2") format("woff2-variations");
-  font-weight: 300 700;
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
