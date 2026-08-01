@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useReduceMotion } from "../lib/useReduceMotion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -82,6 +82,18 @@ function StaticVersion() {
 
 export function Subtraction() {
   const reduce = useReduceMotion();
+  // The pinned scrub animation is desktop-only — on touch/small screens it traps scroll.
+  const [smallScreen, setSmallScreen] = useState(
+    () => typeof window !== "undefined" && window.matchMedia("(max-width: 767px)").matches,
+  );
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    const onChange = () => setSmallScreen(mq.matches);
+    onChange();
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
+  const isStatic = reduce || smallScreen;
   const sectionRef = useRef<HTMLElement>(null);
   const fieldRef = useRef<HTMLDivElement>(null);
   const rowRef = useRef<HTMLDivElement>(null);
@@ -91,7 +103,7 @@ export function Subtraction() {
   const [done, setDone] = useState(false);
 
   useLayoutEffect(() => {
-    if (reduce) return;
+    if (isStatic) return;
     const section = sectionRef.current;
     const field = fieldRef.current;
     const row = rowRef.current;
@@ -174,14 +186,14 @@ export function Subtraction() {
     }, section);
 
     return () => ctx.revert();
-  }, [reduce]);
+  }, [isStatic]);
 
   return (
     <section ref={sectionRef} id="craft" className="relative">
       <div className="mx-auto flex min-h-svh max-w-6xl flex-col justify-center px-5 py-24 md:px-8">
         <Eyebrow>Build less, better</Eyebrow>
 
-        {reduce ? (
+        {isStatic ? (
           <>
             <h2 className="font-display mt-6 max-w-3xl text-4xl font-medium leading-tight text-chalk md:text-5xl">
               Most software does fifty things adequately.{" "}

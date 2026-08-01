@@ -31,11 +31,11 @@ export function TapeRule({
     );
   }
   return (
-    <div aria-hidden="true" className={`relative w-full overflow-hidden ${className}`}>
+    <div aria-hidden="true" className={`relative h-[17px] w-full overflow-hidden ${className}`}>
       <svg
         viewBox="0 0 1200 17"
         preserveAspectRatio="none"
-        className="block h-[17px] w-full min-w-[700px]"
+        className="absolute left-0 top-0 h-[17px] w-full min-w-[700px]"
       >
         <line x1="0" y1="16" x2="1200" y2="16" stroke={tickColor} strokeWidth={1} />
         {ticks}
