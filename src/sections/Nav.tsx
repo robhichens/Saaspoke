@@ -3,27 +3,17 @@ import { useReduceMotion } from "../lib/useReduceMotion";
 import { Menu, X } from "lucide-react";
 
 const LINKS = [
-  { href: "#work", label: "Work" },
-  { href: "#how", label: "How we build" },
-  { href: "#pricing", label: "Pricing" },
+  { href: "#work", label: "The work" },
+  { href: "#how", label: "How we work" },
   { href: "#story", label: "Story" },
 ];
 
 function Wordmark() {
   return (
-    <a href="#top" className="flex items-center gap-0.5 font-display text-xl font-semibold tracking-tight text-chalk">
-      Saasp
-      {/* the "o" is a small hub-and-spoke glyph */}
-      <svg viewBox="0 0 24 24" aria-hidden="true" className="mx-px h-[0.72em] w-[0.72em] translate-y-[0.08em]">
-        <circle cx="12" cy="12" r="10" fill="none" stroke="#c8923d" strokeWidth="2" />
-        <g stroke="#c8923d" strokeWidth="1.6" strokeLinecap="round">
-          <line x1="12" y1="12" x2="12" y2="3.5" />
-          <line x1="12" y1="12" x2="19.4" y2="16.2" />
-          <line x1="12" y1="12" x2="4.6" y2="16.2" />
-        </g>
-        <circle cx="12" cy="12" r="2.4" fill="#c8923d" />
-      </svg>
-      ke
+    <a href="#top" className="flex items-baseline gap-1.5 font-display text-xl font-semibold tracking-tight text-chalk">
+      Saaspoke
+      {/* a single brass tick — the measurement motif, not the old hub-and-spoke */}
+      <span aria-hidden="true" className="h-3 w-px translate-y-[0.05em] bg-brass" />
     </a>
   );
 }
@@ -58,7 +48,7 @@ export function Nav() {
           ))}
           <a
             href="#contact"
-            className="rounded-full border border-ember/80 px-5 py-2 text-sm font-medium text-chalk transition-colors duration-150 hover:bg-ember hover:text-ink"
+            className="rounded-full border border-ember/80 px-5 py-2 text-sm font-medium text-chalk transition duration-150 ease-out hover:bg-ember hover:text-ink motion-safe:hover:scale-[1.03]"
           >
             Start a conversation
           </a>
@@ -88,7 +78,7 @@ export function Nav() {
           <a
             href="#contact"
             onClick={() => setOpen(false)}
-            className="mt-3 inline-block rounded-full bg-ember px-6 py-3 text-sm font-medium text-ink"
+            className="mt-3 inline-block rounded-full bg-ember px-6 py-3 text-sm font-medium text-ink transition duration-150 ease-out hover:bg-[#e26c47] motion-safe:hover:scale-[1.03]"
           >
             Start a conversation
           </a>

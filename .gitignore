@@ -6,3 +6,6 @@ dist
 # Local Netlify folder
 .netlify
 lighthouse-*.json
+
+# Internal founding docs / private notes — keep out of the public repo
+business-launch

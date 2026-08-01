@@ -3,10 +3,10 @@ import { TapeRule } from "../components/TapeRule";
 
 const VALUES = [
   { title: "Operators first", line: "Built for the person who opens the building, not the one who buys enterprise licenses." },
-  { title: "Time is the metric", line: "If a feature doesn't give back thirty minutes a week, it doesn't belong." },
-  { title: "Honest pricing", line: "One price, on the page. No tiers, no gates, no \"contact us.\"" },
+  { title: "Time is the metric", line: "If a system doesn't give real capacity back, it doesn't belong." },
+  { title: "Honest commercial terms", line: "Clear scope, clear price, clear responsibility — agreed up front, no surprises." },
   { title: "Build less, better", line: "Five things, exceptionally — never fifty, adequately." },
-  { title: "The founder is the customer", line: "Every product starts as a tool Rob needed and couldn't buy." },
+  { title: "Understand before building", line: "A perfect solution to the wrong problem is still the wrong solution." },
   { title: "Sustainable by design", line: "A small studio built to still be here in twenty years." },
 ];
 
@@ -20,7 +20,7 @@ export function Values() {
         </h2>
       </Reveal>
       <div className="mt-14">
-        <TapeRule label="30 min / week — minimum return" />
+        <TapeRule label="Capacity — the measure" />
         <ul className="grid gap-px bg-rule sm:grid-cols-2 lg:grid-cols-3">
           {VALUES.map((v, i) => (
             <Reveal as="li" key={v.title} delay={(i % 3) * 0.08} className="card-lift bg-ink p-7 md:p-8">

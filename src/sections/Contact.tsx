@@ -1,7 +1,6 @@
 import { useState } from "react";
 import type { FormEvent } from "react";
 import { Reveal, Eyebrow } from "../components/Reveal";
-import { Wheel } from "../components/Wheel";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
@@ -56,11 +55,6 @@ export function Contact() {
 
   return (
     <section id="contact" className="relative overflow-hidden py-28 md:py-36">
-      {/* the wheel returns, small and at rest — closing the loop */}
-      <div aria-hidden="true" className="pointer-events-none absolute -right-24 -bottom-24 w-[340px] opacity-25 max-md:hidden">
-        <Wheel mode="rest" />
-      </div>
-
       <div className="relative mx-auto max-w-6xl px-5 md:px-8">
         <div className="max-w-2xl">
           <Reveal>
@@ -128,7 +122,7 @@ export function Contact() {
                   <button
                     type="submit"
                     disabled={status === "sending"}
-                    className="rounded-full bg-ember px-7 py-3.5 text-base font-medium text-ink transition-colors duration-150 hover:bg-[#e26c47] disabled:opacity-60"
+                    className="rounded-full bg-ember px-7 py-3.5 text-base font-medium text-ink transition duration-150 ease-out hover:bg-[#e26c47] motion-safe:hover:scale-[1.03] disabled:opacity-60"
                   >
                     {status === "sending" ? "Sending…" : "Start a conversation"}
                   </button>

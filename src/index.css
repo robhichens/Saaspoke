@@ -103,10 +103,16 @@ body {
   font-optical-sizing: auto;
 }
 
-/* Custom cursor: hide the native one only when the reticle is active */
-html.has-reticle,
-html.has-reticle * {
-  cursor: none !important;
+/* Brand cursor: a small brass triangle ruler — the measurement motif.
+   Native CSS cursor, so it tracks at true pointer speed with no JS and no lag.
+   Ignored automatically on touch devices. */
+* {
+  cursor: url("/cursor-ruler-rotated.svg") 19 24, auto;
+}
+/* text fields keep a caret so typing feels right */
+input,
+textarea {
+  cursor: text;
 }
 
 /* Animated link underline: wipes in from the left */

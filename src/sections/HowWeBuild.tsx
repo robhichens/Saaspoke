@@ -5,23 +5,23 @@ import { Reveal, Eyebrow } from "../components/Reveal";
 const STEPS = [
   {
     n: "01",
-    title: "Understand the process",
-    body: "We sit inside the operation and map what already works. Your business has a process — it just isn't in software yet.",
+    title: "Start with a conversation",
+    body: "You don't need to know what software you want. Just what's eating time, causing mistakes, or holding the business back.",
   },
   {
     n: "02",
-    title: "Build only what fits",
-    body: "We formalize and automate exactly that. Nothing more. No feature ships unless a real customer would miss it within a week.",
+    title: "Learn the work",
+    body: "Tell me, show me, let me watch. We learn from the people doing the job — not just the org chart — until we can see the real process, not the official one.",
   },
   {
     n: "03",
-    title: "Deploy without IT",
-    body: "Set up in an afternoon, usable on any device. No servers, no consultants, no six-week onboarding.",
+    title: "Simplify, then build",
+    body: "Before any code, we ask what can just go away. Then we build the smallest useful version — early enough for you to react to the real thing.",
   },
   {
     n: "04",
-    title: "Stay a partner",
-    body: "You get a person who knows your operation — not a ticket queue, not a chatbot, not tier-one support.",
+    title: "Deploy, measure, stay",
+    body: "We watch how it's actually used, measure the capacity it gave back, and stay a person who knows your operation — without making you dependent on us.",
   },
 ];
 
@@ -31,9 +31,9 @@ export function HowWeBuild() {
   return (
     <section id="how" className="mx-auto max-w-6xl px-5 py-28 md:px-8 md:py-36">
       <Reveal>
-        <Eyebrow>How we build</Eyebrow>
+        <Eyebrow>How we work</Eyebrow>
         <h2 className="font-display mt-6 max-w-2xl text-4xl font-medium leading-tight text-chalk md:text-5xl">
-          We do it in the order that works.
+          We learn your business before we build a thing.
         </h2>
       </Reveal>
 

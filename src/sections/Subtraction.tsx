@@ -177,7 +177,7 @@ export function Subtraction() {
   }, [reduce]);
 
   return (
-    <section ref={sectionRef} id="work" className="relative">
+    <section ref={sectionRef} id="craft" className="relative">
       <div className="mx-auto flex min-h-svh max-w-6xl flex-col justify-center px-5 py-24 md:px-8">
         <Eyebrow>Build less, better</Eyebrow>
 

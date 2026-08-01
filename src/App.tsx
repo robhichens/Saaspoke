@@ -1,7 +1,6 @@
 import { lazy, Suspense, useEffect } from "react";
 import { useReduceMotion } from "./lib/useReduceMotion";
 
-import { Cursor } from "./components/Cursor";
 import { Nav } from "./sections/Nav";
 import { Hero } from "./sections/Hero";
 import { Problem } from "./sections/Problem";
@@ -9,12 +8,10 @@ import { TapeRule } from "./components/TapeRule";
 
 // Below-the-fold sections are lazy so the initial bundle stays lean
 // (GSAP and Lenis live entirely in deferred chunks — they never block first paint).
-const Subtraction = lazy(() => import("./sections/Subtraction").then((m) => ({ default: m.Subtraction })));
+const CaseStudy = lazy(() => import("./sections/CaseStudy").then((m) => ({ default: m.CaseStudy })));
 const HowWeBuild = lazy(() => import("./sections/HowWeBuild").then((m) => ({ default: m.HowWeBuild })));
-const Verticals = lazy(() => import("./sections/Verticals").then((m) => ({ default: m.Verticals })));
-const Oliver = lazy(() => import("./sections/Oliver").then((m) => ({ default: m.Oliver })));
-const Pricing = lazy(() => import("./sections/Pricing").then((m) => ({ default: m.Pricing })));
-const Milestones = lazy(() => import("./sections/Milestones").then((m) => ({ default: m.Milestones })));
+const Subtraction = lazy(() => import("./sections/Subtraction").then((m) => ({ default: m.Subtraction })));
+const Offer = lazy(() => import("./sections/Offer").then((m) => ({ default: m.Offer })));
 const Story = lazy(() => import("./sections/Story").then((m) => ({ default: m.Story })));
 const Values = lazy(() => import("./sections/Values").then((m) => ({ default: m.Values })));
 const Contact = lazy(() => import("./sections/Contact").then((m) => ({ default: m.Contact })));
@@ -77,19 +74,16 @@ export default function App() {
 
   return (
     <>
-      <Cursor />
       <Nav />
       <main>
         <Hero />
         <Problem />
         <Suspense fallback={null}>
-          <Subtraction />
+          <CaseStudy />
           <TapeRule />
           <HowWeBuild />
-          <Verticals />
-          <Oliver />
-          <Pricing />
-          <Milestones />
+          <Subtraction />
+          <Offer />
           <Story />
           <Values />
           <Contact />
