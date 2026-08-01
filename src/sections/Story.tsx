@@ -61,7 +61,7 @@ export function Story() {
             And you won't wait months to feel it. Inside the first month you'll be clicking through
             working prototypes of your own workflows — not slides, not a report, the real thing. That's
             the whole idea behind what I do: I don't hand you a strategy. I show you the true measure
-            of your business. So — <em className="italic">let me show you.</em>
+            of your business. So — <a href="#contact" className="italic text-ember link-wipe hover:text-ember">let me show you.</a>
           </Reveal>
           <Reveal as="p" delay={0.3} className="mt-2 font-mono text-xs tracking-[0.18em] uppercase text-slate">
             — Rob Hichens, founder
