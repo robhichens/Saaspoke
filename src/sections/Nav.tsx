@@ -10,10 +10,8 @@ const LINKS = [
 
 function Wordmark() {
   return (
-    <a href="#top" className="flex items-baseline gap-1.5 font-display text-xl font-semibold tracking-tight text-chalk">
-      Saaspoke
-      {/* a single brass tick — the measurement motif, not the old hub-and-spoke */}
-      <span aria-hidden="true" className="h-3 w-px translate-y-[0.05em] bg-brass" />
+    <a href="#top" className="font-display text-xl font-semibold tracking-tight text-chalk">
+      Hichens <span className="italic text-brass">{"&"}</span> Sons
     </a>
   );
 }

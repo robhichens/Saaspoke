@@ -18,7 +18,7 @@ export function Story() {
           <Reveal delay={0.1}>
             <img
               src="/Rob-profile-pic.jpg"
-              alt="Rob Hichens, founder of Saaspoke"
+              alt="Rob Hichens, founder of Hichens & Sons"
               width={880}
               height={1168}
               loading="lazy"
